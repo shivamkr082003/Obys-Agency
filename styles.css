@@ -1,4 +1,15 @@
-
+/* @font-face {
+  font-family: 'PlainLight';
+  src: url('fonts/plain-light-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+    font-family: 'Silk Serif';
+    src: url('fonts/silk-serif-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+} */
 
 * {
     margin: 0;
