@@ -550,6 +550,8 @@ body{
     padding-left: 28vw;
     margin-top: 5vw;
     padding-right: 2vw;
+
+
 }
 
 #footer h1 {
@@ -560,8 +562,12 @@ body{
 }
 
 #footer-text {
-    position: relative;
-    /* background-color: red; */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2vw; /* spacing between elements */
+  width: 100%;
 }
 
 #footer-text h2 {
@@ -574,6 +580,18 @@ body{
     left: 0;
     font-family: "silk serif";
 }
+#footer-text img {
+ margin-right: 13.5vw;
+  width: auto;
+  
+}
+#footer-arrow {
+  transform-origin: center;
+  display: inline-block;
+}
+
+
+
 
 #footer-text h2 span {
     font-family: "silk serif";

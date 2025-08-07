@@ -175,8 +175,84 @@ function flagAnimation() {
   })
 
 }
+function footerAnimation() {
+  var clutter = "";
+  var clutter2 = "";
+
+  // Wrap h1 text
+  document.querySelector("#footer h1").textContent.split("").forEach(function (elem) {
+    clutter += `<span>${elem}</span>`;
+  });
+  document.querySelector("#footer h1").innerHTML = clutter;
+
+  // Wrap h2 text
+  document.querySelector("#footer h2").textContent.split("").forEach(function (elem) {
+    clutter2 += `<span>${elem}</span>`;
+  });
+  document.querySelector("#footer h2").innerHTML = clutter2;
+
+  const footerText = document.querySelector("#footer-text");
+  const arrow = document.querySelector("#footer-arrow");
+
+  // 👉 Mouse Enter
+  footerText.addEventListener("mouseenter", function () {
+    // Step 1: Hide h1
+    gsap.to("#footer h1 span", {
+      opacity: 0,
+      stagger: 0.03,
+      duration: 0.3,
+    });
+
+    // Step 2: Show h2 after h1 is hidden
+    gsap.to("#footer h2 span", {
+      delay: 0.4,
+      opacity: 1,
+      stagger: 0.05,
+      duration: 0.4,
+    });
+
+    // Step 3: Move arrow after h2 is visible
+    gsap.to(arrow, {
+      delay: 1.0,
+      x: 30,
+      duration: 0.4,
+      ease: "power2.out",
+    });
+  });
+
+  // 👈 Mouse Leave
+  footerText.addEventListener("mouseleave", function () {
+    // Step 1: Arrow back
+    gsap.to(arrow, {
+      x: 0,
+      duration: 0.4,
+      ease: "power2.inOut",
+    });
+
+    // Step 2: Hide h2
+    gsap.to("#footer h2 span", {
+      delay: 0.4,
+      opacity: 0,
+      stagger: 0.03,
+      duration: 0.3,
+    });
+
+    // Step 3: Show h1 again
+    gsap.to("#footer h1 span", {
+      delay: 0.8,
+      opacity: 1,
+      stagger: 0.05,
+      duration: 0.4,
+    });
+  });
+}
+
+
+
+
 loadingAnimation();
 cursorAnimation();
 locomotiveAnimation();
 sheryAnimation();
-flagAnimation()
+flagAnimation();
+footerAnimation()
